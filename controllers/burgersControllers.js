@@ -1,7 +1,7 @@
 //express app
 var express = require("express");
-var router = express.router();
-var burger("../models/burger.js");
+var router = express.Router();
+var burger = ("../models/burger.js");
 
 //Routes
 //All burgers in the database
