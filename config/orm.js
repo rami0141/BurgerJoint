@@ -39,6 +39,26 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+//Object for all our SQL statment functions
+selectAll: function(tableInput, cb) {
+	// retrieving data as a string
+	var queryString = "SELECT * FROM " + tableInput + ";";
+	connection.query(queryString, function(err, result) {
+		if (err) {
+			throw err;
+		}
+		cb(result);
+	});
+},
+
+insertOne: function(table, cols, vals, cb) {
+	var queryString = "INSERT INTO " + table;
+}
+
+
+
+
+
 
 
 
