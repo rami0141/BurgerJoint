@@ -33,7 +33,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+Object for all our SQL statement functions.
 var orm = {
   //cb - call back funtion - after selecting data we will want to run whatever function is in cat.js
   selectAll: function(tableInput, cb) {

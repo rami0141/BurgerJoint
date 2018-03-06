@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
 		res.render("index", hbsObject);
 	});
 });
-// post new burger to the database
+post new burger to the database
 router.post("/", function(req, res) {
 	burger.insertOne([
 		"burger_name", "devoured"
