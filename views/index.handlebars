@@ -1,19 +1,25 @@
-<h2>Time To Eat!</h2>
-<h3>Type In Burger Name</h3
-<ul>
-  {{#each movies}}
-    <li>
-      <p>
-        {{this.id}}. {{this.burger}}
 
-        <button data-burgerid="{{this.id}}" class="delburger">Devour it!</button>
+<div class="jumbotron text-center bg-warning">
+  <h1 class="display-4 text-danger">What Kind Of Burger Do You Like To Eat?</h1>
+  <hr class="my-4">
+	<h2 class="pb-4 text-success">Burgers Ordered</h2>
+  	{{#each burgers}}
+      <p class="text-muted">
+        {{this.id}}. {{this.burger_name}}
+
+        <button data-burgerid="{{this.id}}" class="devBurger">Devour it!</button>
+
       </p>
     </li>
   {{/each}}
 </ul>
 
-<h2>Order a Burger</h2>
+<h2 class="mt-4 text-primary">Order A Burger Here:</h2>
+<br>
 <form id="addburger" class="button-size">
 	<textarea type="text" name="burger"></textarea>
 	<button type="submit">Eat the Burger!</button>
 </form>
+
+
+</div>

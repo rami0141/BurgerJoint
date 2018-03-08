@@ -1,7 +1,7 @@
 //express app
 var express = require("express");
 var router = express.Router();
-var burger = ("../models/burger.js");
+var burger = require("../models/burger.js");
 
 //Routes
 //All burgers in the database
@@ -14,7 +14,7 @@ router.get("/", function(req, res) {
 		res.render("index", hbsObject);
 	});
 });
-post new burger to the database
+//post new burger to the database
 router.post("/", function(req, res) {
 	burger.insertOne([
 		"burger_name", "devoured"
