@@ -8,4 +8,4 @@ Burger Joint is a restaurant app that allows users to input the name of the burg
 	3. Node.js
 	4. Bootstrap
 
-	![Image of App](public/images/app.JPG)
+	![Image of App](images/app.JPG)
