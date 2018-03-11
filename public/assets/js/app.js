@@ -4,7 +4,7 @@ $(function() {
     var newDevoured = $(this).data("newdevoured");
 
     var newDevouredState = {
-      devoured: newDevoured
+      devoured: 1
     };
 
     // Send the PUT request.
@@ -26,7 +26,8 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      name: $("#addburger").val().trim();
+      burger_name: $("#addburger").val().trim();
+      devoured: 0
     };
 
     // Send the POST request.

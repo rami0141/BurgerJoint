@@ -2,24 +2,53 @@
 <div class="jumbotron text-center bg-warning">
   <h1 class="display-4 text-danger">What Kind Of Burger Do You Like To Eat?</h1>
   <hr class="my-4">
-  <img src="../images/burger.JPG" alt="Picture of Burger" style="height:300px; width:300px" class="rounded-circle mt-3 mb-3">
-  	{{#each burgers}}
-      <p class="text-muted">
-        {{this.id}}. {{this.burger_name}}
 
-        <button data-burgerid="{{this.id}}" class="devBurger">Devour it!</button>
+  <div class="row">
+    <div class="col-4 col-md-4">
+      <div class="card bg-info text-white float-right" style="width: 18rem;">
+        <div class="card-body">
+          <h2>Burgers Ordered</h2>
+          <hr>
+            {{#each burgers}}
+             <p class="text-white">{{#unless this.devoured}}</p>
+             <p class="text-white">
+                {{this.id}}.
+                  {{this.burger_name}}
+                  <button data-burgerid="{{this.id}}" type="button" class="btn btn-danger devBurger">DEVOUR IT</button>
+              </p>
+                {{/unless}}
+              {{/each}} 
+            </div>
+          </div>
+      </div>
 
-      </p>
-    </li>
-  {{/each}}
-</ul>
+      <div class="col-4 col-md-4">
+        <img src="../images/burger.JPG" alt="Picture of Burger" style="height:400px; width:400px" class="rounded-circle mt-3 mb-3">
+      </div>
 
-<h2 class="mt-4 text-primary">Order A Burger Here:</h2>
-<br>
-<form id="addburger" class="button-size">
-	<textarea type="text" name="burger"></textarea>
-	<button type="submit">Eat the Burger!</button>
-</form>
+      <div class="col-6 col-md-4">
+        <div class="card bg-info text-white float-left" style="width: 18rem;">
+          <div class="card-body">
+            <h2>Devoured</h2>
+            <hr>
+              {{#each burgers}}
+                {{#if this.devoured}}
+                  {{this.id}}.
+                  {{this.burger_name}}
+                {{/if}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-</div>
+ <h4 class="text-center">What's your favorite kind of burger?</h4>
+    <form role="form" action="/" method="POST">
+        <div class="input-group mb-3 col-md-4 offset-md-4">
+           <input type="text" class="form-control" placeholder="Bacon Cheddar Burger" name="burger_name" required>
+            <div class="input-group-append">
+            <button type="submit" class="btn btn-danger btn-fill addBurger">Submit</button>
+        </div>
+      </form>
+
